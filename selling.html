@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Crop</title>
+    <style>
+        a:link {
+  color: green;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: red;
+}
+
+/* selected link */
+a:active {
+  color: yellow;
+}
+        body {
+    font-family: Arial, sans-serif;
+    background-image: url('/farm.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sell Your Crop</h1>
+        <form id="sellForm">
+            <label for="cropName">Crop Name:</label>
+            <input type="text" id="cropName" required>
+            
+            <label for="quantity">Quantity (in kg):</label>
+            <input type="number" id="quantity" required>
+            
+            <label for="price">Price per kg (in Rs):</label>
+            <input type="number" id="price" required>
+            
+            <button onclick="alert('your crop sold successfully');"><a href="http://127.0.0.1:5500/main.html" target="main">sell crop</a></button>
+        </form>
+    </div>
+    <script src="script.js">
+        function sellCrop() {
+    // Fetch values from form inputs
+    const cropName = document.getElementById('cropName').value;
+    const quantity = document.getElementById('quantity').value;
+    const price = document.getElementById('price').value;
+
+    // Validate inputs (you can add more validation as needed)
+
+    // Create an object with crop information
+    const cropData = {
+        cropName: cropName,
+        quantity: quantity,
+        price: price
+    };
+
+    // Send data to the server (you would typically use AJAX or fetch API)
+    // In this example, I'm just logging the data to the console
+    console.log('Crop Information:', cropData);
+
+    // You can add code here to send the data to your backend server and store it in a database
+}
+    </script>
+</body>
+</html>
